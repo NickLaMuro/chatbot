@@ -6,20 +6,29 @@ class Welcome
      super
   end
   
+  # in the works
+  # match /#{$bot_name} /, method: :bot_ping
+    
+  if File.exist?("message.txt")
+    File.open("message.txt").each { |line|
+      $help_messages << line
+    }
+  end
+  
   listen_to :join
   
   def listen(m)
-    welcome_message(m)
+     welcome_message(m)
   end
-  
-  $help_messages << "Again, we welcome you to the ECRuby IRC channel!"
-  $help_messages << "Feel free to ask questions about the ruby programming language and related technologies."
-  $help_messages << "Most of the members are usually busy with work and other projects, " +
-  "but if you type someones user ('welcome_bot hello'), it will get there attention."
   
   def welcome_message(m)
-    m.reply "Welcome to the ECRuby IRC chat channel."
+    m.reply "Welcome to the #{$channel} IRC chat channel."
     m.reply "Type '!help' to recieve more information about the channel."
   end
+  
+  # in the works
+  # def bot_ping(m)
+  #     m.user.send "Pinging me won't get you any help."
+  #   end
   
 end

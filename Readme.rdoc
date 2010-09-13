@@ -11,6 +11,11 @@ It runs with straight Ruby. You'll need the Cinch gem and Ruby 1.9, and you'll w
     nick: my_bot
     channel: my_channel
 
+You should also add a message.txt that will include your help message text.  The file will be read on a line by line basis, so each new line will be a new message
+
+  Welcome to the welcome_bot IRC channel.
+  For assistance, please ping one of our members ('welcome_bot help me, I am lost').
+
 Then just run it with
 
   ruby chatbot.rb

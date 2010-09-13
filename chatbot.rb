@@ -3,10 +3,8 @@ require 'cinch'
 require 'yaml'
 
 settings = YAML.load(File.read("bot.yml"))
-$help_messages = ["This is a test"]
+$help_messages = []
 
-require 'plugins/karma'
-require 'plugins/link_catcher'
 require 'plugins/welcome'
 
 @irc  = Cinch::Bot.new do
@@ -14,8 +12,8 @@ require 'plugins/welcome'
   configure do |c|
     c.server = "irc.freenode.org"
     c.nick = settings["settings"]["nick"]
-    c.channels = [settings["settings"]["channel"]]
-    c.plugins.plugins = [Karma, LinkCatcher, Welcome]
+    c.channels = ["##{settings['settings']['channel']}"]
+    c.plugins.plugins = [Welcome]
   end
 
   on :message, /^!help/ do |m|

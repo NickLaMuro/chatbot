@@ -6,11 +6,21 @@ class Welcome
      super
   end
   
-  $help_messages << "!channel_help <nick>    Info about the channel"
-  match /channel_help (.+)/, method: :channel_help
+  listen_to :join
   
-  def channel_help(m, nick)
-    m.user.send "Welcome to the ECRuby IRC chat channel."
+  def listen(m)
+    channel_help(m)
+  end
+  
+  $help_messages << "ECRuby channel information:"
+  $help_messages << "Again, we welcome you to the ECRuby IRC channel!"
+  $help_messages << "Feel free to ask questions about the ruby programming language and related technologies."
+  $help_messages << "Most of the members are usually busy with work and other projects, " +
+  "but if you type someones user ('welcome_bot hello'), it will get there attention."
+  
+  def welcome_message(m)
+    m.reply "Welcome to the ECRuby IRC chat channel."
+    m.reply "Type '!help' to recieve more information about the channel."
   end
   
 end

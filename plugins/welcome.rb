@@ -9,7 +9,7 @@ class Welcome
   listen_to :join
   
   def listen(m)
-    channel_help(m)
+    welcome_message(m)
   end
   
   $help_messages << "Again, we welcome you to the ECRuby IRC channel!"

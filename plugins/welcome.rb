@@ -7,18 +7,28 @@ class Welcome
   end
   
   # in the works
-  # match /#{$bot_name} /, method: :bot_ping
-    
+  # match Regexp.new('#{$bot_name}'), method: :bot_ping
+  
   if File.exist?("message.txt")
     File.open("message.txt").each { |line|
       $help_messages << line
     }
   end
   
+  $white_list = ["#{$bot_name}"]
+  
+  if File.exist?("regulars.txt")
+    File.open("regulars.txt").each { |line|
+      $white_list << line.chomp
+    }
+  end
+  
   listen_to :join
   
   def listen(m)
-     welcome_message(m)
+    unless $white_list.include?(m.user.nick) 
+      welcome_message(m)
+    end
   end
   
   def welcome_message(m)
@@ -28,7 +38,7 @@ class Welcome
   
   # in the works
   # def bot_ping(m)
-  #     m.user.send "Pinging me won't get you any help."
+  #     m.user.send "Pinging me doesn't actually do anything."
   #   end
   
 end

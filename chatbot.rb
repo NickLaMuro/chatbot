@@ -19,7 +19,7 @@ require 'plugins/welcome'
   end
 
   on :message, /^!help/ do |m|
-    $help_messages.each{|message| m.user.send message }
+    $help_messages.each{|message| m.reply message }
   end
 
 end

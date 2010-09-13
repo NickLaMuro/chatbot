@@ -16,6 +16,17 @@ You should also add a message.txt that will include your help message text.  The
   Welcome to the welcome_bot IRC channel.
   For assistance, please ping one of our members ('welcome_bot help me, I am lost').
 
+You can also add a regulars.txt that will exclude certain users from receiving initial spam (your bot is already included).  Once again, each user is read in line by line.
+
+	somebody001
+	somebody002
+	somebody003
+
 Then just run it with
 
   ruby chatbot.rb
+
+
+=== TODO
+
+Send a message for pinging the bot (might be in the cinch API, haven't checked though)

@@ -18,9 +18,9 @@ You should also add a message.txt that will include your help message text.  The
 
 You can also add a regulars.txt that will exclude certain users from receiving initial spam (your bot is already included).  Once again, each user is read in line by line.
 
-	somebody001
-	somebody002
-	somebody003
+  somebody001
+  somebody002
+  somebody003
 
 Then just run it with
 

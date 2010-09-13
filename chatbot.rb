@@ -4,6 +4,7 @@ require 'yaml'
 
 settings = YAML.load(File.read("bot.yml"))
 $help_messages = ["Channel information:"]
+$channel = settings["settings"]["channel"]
 $bot_name = settings["settings"]["nick"]
 
 require 'plugins/welcome'
@@ -13,7 +14,7 @@ require 'plugins/welcome'
   configure do |c|
     c.server = "irc.freenode.org"
     c.nick = $bot_name
-    c.channels = ["##{settings['settings']['channel']}"]
+    c.channels = ["##{$channel}"]
     c.plugins.plugins = [Welcome]
   end
 

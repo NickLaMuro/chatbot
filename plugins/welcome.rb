@@ -12,7 +12,6 @@ class Welcome
     channel_help(m)
   end
   
-  $help_messages << "ECRuby channel information:"
   $help_messages << "Again, we welcome you to the ECRuby IRC channel!"
   $help_messages << "Feel free to ask questions about the ruby programming language and related technologies."
   $help_messages << "Most of the members are usually busy with work and other projects, " +

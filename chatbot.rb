@@ -3,7 +3,7 @@ require 'cinch'
 require 'yaml'
 
 settings = YAML.load(File.read("bot.yml"))
-$help_messages = []
+$help_messages = ["Channel information:"]
 
 require 'plugins/welcome'
 

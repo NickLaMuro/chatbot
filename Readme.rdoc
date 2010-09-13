@@ -1,6 +1,6 @@
-== ChatBot
+== Welcome bot
 
-A community built chat bot, just for fun. Send pull requests!
+A welcome bot for your chat room.  Will send a channel wide reply to a newly joined user and prompt them to use the "!help" command for a more information on the channel.
 
 === Running it
 
@@ -9,16 +9,8 @@ It runs with straight Ruby. You'll need the Cinch gem and Ruby 1.9, and you'll w
   bot.yaml
   settings:
     nick: my_bot
-    channel: ecruby
+    channel: my_channel
 
 Then just run it with
 
   ruby chatbot.rb
-  
-
-== Things we can do
-
-* More games
-* Database persistence
-* Record links to Tumblr?
-* Whatever else sounds like fun

@@ -21,6 +21,10 @@ require 'plugins/welcome'
   on :message, /^!help/ do |m|
     $help_messages.each{|message| m.reply message }
   end
+  
+  on :message, Regexp.new("#{$bot_name}") do |m|
+    m.user.send "Pinging me doesn't actually do anything."
+  end
 
 end
 

@@ -23,7 +23,7 @@ require 'plugins/welcome'
   end
   
   on :message, Regexp.new("#{$bot_name}") do |m|
-    m.user.send "Pinging me doesn't actually do anything."
+    m.reply "#{m.user.nick}, pinging me doesn't actually do anything useful."
   end
 
 end
